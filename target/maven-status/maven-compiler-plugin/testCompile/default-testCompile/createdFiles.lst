@@ -1,0 +1,4 @@
+com\great\MiquelMontoro\pilotes\controllers\PilotesControllerTest.class
+com\great\MiquelMontoro\pilotes\mapper\OrderMapperTest.class
+com\great\MiquelMontoro\pilotes\repo\PilotesRepositoryTest.class
+com\great\MiquelMontoro\pilotes\MainTests.class
