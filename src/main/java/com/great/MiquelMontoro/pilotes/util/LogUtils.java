@@ -1,7 +1,12 @@
 package com.great.MiquelMontoro.pilotes.util;
 
 import org.springframework.util.StringUtils;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 public class LogUtils {
@@ -38,4 +43,17 @@ public class LogUtils {
     public static String setMessageId(String header) {
         return (StringUtils.isEmpty(header)) ? UUID.randomUUID().toString() : header;
     }
+
+    public static void java() {
+        List list = List.of(2);
+
+        Integer[] sourceArray = { 0, 1, 2, 3, 4, 5 };
+        List<Integer> targetList = Arrays.asList(sourceArray);
+        targetList = targetList.stream().collect(Collectors.toList());
+
+        Optional.of(targetList);
+        int six = Integer.valueOf(targetList.get(0));
+    }
+
+
 }
