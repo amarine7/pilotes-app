@@ -126,7 +126,7 @@ public class  PilotesController implements PilotesApi {
     }
 
     @GetMapping("/returnRecords")
-    public List<com.great.MiquelMontoro.pilotes.model.Order> pertutti() {
+    public List<com.great.MiquelMontoro.pilotes.model.Order> checkLoadedRecords() {
         return pilotesService.returnRecords();
     }
 }

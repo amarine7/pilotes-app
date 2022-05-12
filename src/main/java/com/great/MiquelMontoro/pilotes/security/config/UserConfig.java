@@ -37,8 +37,8 @@ public class UserConfig {
                     .username("someone")
                     .password(passwordEncoder.encode("5678"))
                     .authority("CAN_NOT_SEARCH")
-                    .firstName("Alessandro")
-                    .lastName("Marinelli")
+                    .firstName("Guy")
+                    .lastName("Somebody")
                     .phoneNumber("+1 (306) 280-6587")
                     .build();
             userRepo.save(user);

@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 BasicAuthenticationFilter.class);
 
         http.authorizeRequests()
-                .antMatchers("/pertutti").permitAll()
+                .antMatchers("/checkLoadedRecords").permitAll()
                 .antMatchers("/test").hasAuthority("CAN_SEARCH");
                 //.anyRequest().authenticated();
     }

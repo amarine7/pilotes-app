@@ -7,7 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity(name = "com.laurentiuspilca.ssia.model.Order")
+@Entity(name = "com.great.MiquelMontoro.pilotes.model.Order")
 @Table(name="pilotes_order")
 @NoArgsConstructor
 @AllArgsConstructor

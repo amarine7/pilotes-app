@@ -115,7 +115,7 @@ public class PilotesService {
     // to remove eventually
     public List<Order> returnRecords() {
         return pilotesRepository.findAll();
-//        List<com.laurentiuspilca.ssia.model.Order> list = pilotesRepository.findAll();
+//        List<com.great.MiquelMontoro.pilotes.model.Order> list = pilotesRepository.findAll();
 //        System.out.println(list.get(0).getUser());
 //        return list;
     }
