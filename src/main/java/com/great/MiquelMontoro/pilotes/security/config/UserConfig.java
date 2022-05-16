@@ -14,7 +14,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class UserConfig {
 
     public static final String PHONE_NUMBER_PATTERN = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$";
-//    public static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$";
+
+    /*
+      Passwords allowed: at least 8 characters long,
+      one lowercase, one uppercase, one number and one special character,
+      no whitespaces.
+    */
+    public static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$";
 
     @Autowired
     private UserRepo userRepo;

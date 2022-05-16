@@ -19,9 +19,11 @@ Technical aspects:
 - Tests are included
 
 Technical TODOs:
+- separate user creation (through a User dto and via POST req) from user registration (User entity)
+- enforce password validation at API user creation level 
+- API documentation (Swagger)
 - add Docker Compose for local development
 - Test coverage 80% or above
-- API documentation (Swagger)
 
 The data model contains the following data:
 - Basic Client info:

@@ -28,7 +28,6 @@ public class User {
     private String username;
 
     @Column(length = 100)
-//    @Pattern(regexp = PASSWORD_PATTERN)
     private String password;
 
     @Column(length = 50, name="first_name")
