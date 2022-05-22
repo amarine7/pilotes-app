@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -45,9 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 BasicAuthenticationFilter.class);
 
         http.authorizeRequests()
-                .antMatchers("/checkLoadedRecords").permitAll()
-                .antMatchers("/test").hasAuthority("CAN_SEARCH");
-                //.anyRequest().authenticated();
+                .antMatchers("/search-pilotes").hasAuthority("CAN_SEARCH")
+                .anyRequest().authenticated();
     }
 
     @Override
@@ -55,8 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-
-
 
     @Bean
     BCryptPasswordEncoder passwordEncoder() {

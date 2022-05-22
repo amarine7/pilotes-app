@@ -10,20 +10,27 @@ the order because Miquel will be occupied cooking the pilotes.
 
 Keep in mind that:
 - all types of data used are validated. For example, you must use a valid email format when placing the order.
-- the search operation is secured in that **only authorized users are allowed to use the search**. All other operations are public and not secured.
+- the order creation & update are secured: **only authenticated customers are allowed to order**.
+- the order search operation is secured in that **only authenticated and authorized users are allowed to use the search**.
+- there is a /login endpoint for authentication, and **the issued JWT is valid for 5 minutes**.
 
 Technical aspects:
-- The  project uses Lombok
+- The  project uses Lombok and Mapstruct
 - The API follows REST standard
 - The  project use MySQL database, but it's easily configurable to use an in-memory database such as H2 or similar too.
 - Tests are included
 
 Technical TODOs:
+- add at least one operation public and not secured.
+- for admnistrative users, grant infinite JWT validity.
+- add treating exceptions and logging the event in filters.
+- add global exception handling.
 - separate user creation (through a User dto and via POST req) from user registration (User entity)
 - enforce password validation at API user creation level 
 - API documentation (Swagger)
 - add Docker Compose for local development
-- Test coverage 80% or above
+- test coverage 80% or above
+- add separate configuration for deployment on AWS (connection to RDS instead of a local MySQL, etc.)
 
 The data model contains the following data:
 - Basic Client info:

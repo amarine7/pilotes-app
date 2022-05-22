@@ -93,7 +93,7 @@ public class  PilotesController implements PilotesApi {
         throw new MissingAcceptHeaderException("Content-Type", contentType);
     }
 
-    public ResponseEntity<List<Order>> findPilotes(String contentType, String authentication, Long customerId, Long orderId, String firstName, String lastName, String deliveryAddress) {
+    public ResponseEntity<List<Order>> findPilotes(String contentType, String authorization, Long customerId, Long orderId, String firstName, String lastName, String deliveryAddress) {
         String messageId = LogUtils.setMessageId(request.getHeader(LogUtils.MESSAGE_ID));
         String username = UserConfig.retrieveUserAuthentication().getName();
         if (contentType != null && contentType.contains("application/json")) {

@@ -57,8 +57,8 @@ public interface PilotesApi {
                                             @RequestHeader(value="Content-Type", required=true)
                                                     String contentType,
                                             @Parameter(in = ParameterIn.HEADER, description = "" ,required=true,schema=@Schema())
-                                            @RequestHeader(value="Authentication", required=true)
-                                                    String authentication,
+                                            @RequestHeader(value="Authorization", required=true)
+                                                    String authorization,
                                             @Parameter(in = ParameterIn.QUERY, description = "id of a customer" ,schema=@Schema())
                                             @Valid @RequestParam(value = "customerId", required = false)
                                                     Long customerId,

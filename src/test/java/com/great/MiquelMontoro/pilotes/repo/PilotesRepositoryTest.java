@@ -19,7 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-@TestPropertySource(locations = {"classpath:application.properties"})
+@TestPropertySource(locations = {"classpath:application.yml"})
 public class PilotesRepositoryTest {
 
     @Autowired

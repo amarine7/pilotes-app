@@ -50,13 +50,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+    // This filter is always active, except for the /login and /test endpoints
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return request.getServletPath().equals("/login") ||
-//                request.getServletPath().equals("/create-your-pilotes") ||
-                request.getServletPath().equals("/search-pilotes") ||
-                request.getServletPath().equals("/update-pilotes") ||
-                request.getServletPath().equals("/test") ||
-                request.getServletPath().equals("/returnRecords");
+                request.getServletPath().equals("/test");
     }
 }

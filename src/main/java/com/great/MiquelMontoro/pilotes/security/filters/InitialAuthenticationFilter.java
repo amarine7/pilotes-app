@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @Component
 public class InitialAuthenticationFilter extends OncePerRequestFilter {
 
-    private static final Integer ACCESS_TOKEN_VALIDITY_SECONDS = 100;
+    private static final Integer ACCESS_TOKEN_VALIDITY_IN_SECONDS = 300;
 
     @Autowired
     private AuthenticationManager manager;
@@ -50,12 +50,13 @@ public class InitialAuthenticationFilter extends OncePerRequestFilter {
                 .claim("authority", authorities)
                 .signWith(key)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                //.setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS*1000))
+                .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_IN_SECONDS*1000))
                 .compact();
 
         response.setHeader("Authorization", jwt);
     }
 
+    // This filter is active only for the /login endpoint
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return !request.getServletPath().equals("/login");
