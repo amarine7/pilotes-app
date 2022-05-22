@@ -1,0 +1,43 @@
+#server:
+#  port: '8080'
+
+spring:
+  # MySQL db configuration
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/neon?useLegacyDatetimeCode=false&useSSL=false&serverTimezone=UTC
+    driverClassName: com.mysql.jdbc.Driver
+    password: '11234'
+  # JPA & Hibernate configuration
+  jpa:
+    show-sql: 'true'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+
+jwt:
+  signing:
+    key: ymLTU8rq83j4fmJZj60wh4OrMNuntIj4fmJ
+auth:
+  server:
+    base:
+      url: http://localhost:8080
+
+
+
+#driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+# h2 db configuration
+#spring.h2.console.enabled = true
+#spring.h2.console.path = /h2
+
+#spring.datasource.url = jdbc:h2:mem:testdb
+#spring.datasource.driverClassName = org.h2.Driver
+#spring.datasource.username = sa
+#spring.datasource.password = password
+
+#spring.jpa.database-platform = org.hibernate.dialect.H2Dialect
