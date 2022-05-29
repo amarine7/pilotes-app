@@ -27,14 +27,14 @@ import java.util.List;
 @Validated
 public interface PilotesApi {
 
-    @Operation(summary = "create a pilotes", description = "", tags = {"createPilotes"})
+    @Operation(summary = "create a pilotes", description = "", tags = {"create"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation"),
 
             @ApiResponse(responseCode = "400", description = "Invalid input", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))),
 
             @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))})
-    @RequestMapping(value = "/create-your-pilotes",
+    @RequestMapping(value = "/api/create-your-pilotes",
             produces = {"application/json"},
             consumes = {"application/json"},
             method = RequestMethod.POST)
@@ -50,7 +50,7 @@ public interface PilotesApi {
             @ApiResponse(responseCode = "200", description = "Successful operation", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Order.class)))),
 
             @ApiResponse(responseCode = "400", description = "Invalid input", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))) })
-    @RequestMapping(value = "/search-pilotes",
+    @RequestMapping(value = "/api/search-pilotes",
             produces = { "application/json" },
             method = RequestMethod.GET)
     ResponseEntity<List<Order>> findPilotes(@Parameter(in = ParameterIn.HEADER, description = "" ,required=true,schema=@Schema())
@@ -85,7 +85,7 @@ public interface PilotesApi {
             @ApiResponse(responseCode = "404", description = "Data not found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))),
 
             @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))) })
-    @RequestMapping(value = "/update-pilotes",
+    @RequestMapping(value = "/api/update-pilotes",
             produces = { "application/json" },
             consumes = { "application/json" },
             method = RequestMethod.PUT)

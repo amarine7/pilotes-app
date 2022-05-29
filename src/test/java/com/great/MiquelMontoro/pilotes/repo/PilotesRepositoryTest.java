@@ -1,6 +1,6 @@
 package com.great.MiquelMontoro.pilotes.repo;
 
-import com.great.MiquelMontoro.pilotes.model.Order;
+import com.great.MiquelMontoro.pilotes.dto.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -33,7 +33,7 @@ public class PilotesRepositoryTest {
     @Test
     @Sql(scripts={"classpath:create_records.sql"})
     void testNumberOfRecords() {
-        List<Order> orders = pilotesRepository.findAll();
+        List<com.great.MiquelMontoro.pilotes.model.Order> orders = pilotesRepository.findAll();
         assertThat(orders).isNotNull();
         assertThat(orders.size()).isEqualTo(2);
     }
@@ -43,9 +43,9 @@ public class PilotesRepositoryTest {
     @ParameterizedTest(name = "Case: {0}")
     @MethodSource("getOrders")
     @Sql(scripts={"classpath:create_records.sql"})
-    public void testGetOneRecord(String orderCase, com.great.MiquelMontoro.pilotes.dto.Order order) {
+    public void testGetOneRecord(String orderCase, Order order) {
 
-        Order retrievedOrder = pilotesRepository.getOne(order.getId());
+        com.great.MiquelMontoro.pilotes.model.Order retrievedOrder = pilotesRepository.getOne(order.getId());
 
         assertThat(retrievedOrder.getOrderTotal()).isEqualTo(order.getOrderTotal());
         assertThat(retrievedOrder.getDeliveryAddress()).isEqualTo(order.getDeliveryAddress());
@@ -54,13 +54,13 @@ public class PilotesRepositoryTest {
 
     private static Stream<? extends Arguments> getOrders() {
         return Stream.of(
-                Arguments.arguments("1st order", com.great.MiquelMontoro.pilotes.dto.Order.builder()
+                Arguments.arguments("1st order", Order.builder()
                         .id(Long.valueOf(1))
                         .deliveryAddress("1234 Main Street")
                         .numberOfPilotes(5)
                         .idUser(Long.valueOf(1))
                         .build()),
-                Arguments.arguments("2nd order", com.great.MiquelMontoro.pilotes.dto.Order.builder()
+                Arguments.arguments("2nd order", Order.builder()
                         .id(Long.valueOf(2))
                         .deliveryAddress("544 Younge Street")
                         .numberOfPilotes(15)

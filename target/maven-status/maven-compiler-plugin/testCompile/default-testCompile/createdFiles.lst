@@ -1,4 +1,4 @@
-com\great\MiquelMontoro\pilotes\controllers\PilotesControllerTest.class
-com\great\MiquelMontoro\pilotes\mapper\OrderMapperTest.class
-com\great\MiquelMontoro\pilotes\repo\PilotesRepositoryTest.class
-com\great\MiquelMontoro\pilotes\MainTests.class
+com\great\miquel\montoro\pilotes\mapper\OrderMapperTest.class
+com\great\miquel\montoro\pilotes\MainTests.class
+com\great\miquel\montoro\pilotes\controllers\PilotesControllerTest.class
+com\great\miquel\montoro\pilotes\repo\PilotesRepositoryTest.class

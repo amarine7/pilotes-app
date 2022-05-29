@@ -7,10 +7,10 @@ tags:
   - name: pilotes
     description: Miquel Montoro Pilotes functions
 paths:
-  /create-your-pilotes:
+  /api/create-your-pilotes:
     post:
       tags:
-        - createPilotes
+        - create
       summary: create a pilotes
       operationId: createPilotes
       parameters:
@@ -45,7 +45,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /search-pilotes:
+  /api/search-pilotes:
     get:
       tags:
         - search
@@ -123,7 +123,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /update-pilotes/{id}:
+  /api/update-pilotes/{id}:
     put:
       tags:
         - update
@@ -215,6 +215,7 @@ components:
           type: string
         status:
           type: integer
+          format: int32
         fieldErrors:
           type: array
           items:

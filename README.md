@@ -1,6 +1,6 @@
 # pilotes-app
 
-This Spring based application allows us to manage the orders of the "pilotes" through some
+This Spring-based application allows us to manage the orders of the "pilotes" through some
 API. Pilotes of the great Miquel Montoro are a Majorcan recipe that consisting of a meatball stew.
 The following operations are implemented:
 - **Create a pilotes order**, choosing between 5, 10 or 15 pilotes.
@@ -21,13 +21,13 @@ Technical aspects:
 - Tests are included
 
 Technical TODOs:
+- API documentation (Swagger): add ApiInfo, solve problem with ErrorResponse.
 - add at least one operation public and not secured.
 - for admnistrative users, grant infinite JWT validity.
 - add treating exceptions and logging the event in filters.
 - add global exception handling.
 - separate user creation (through a User dto and via POST req) from user registration (User entity)
-- enforce password validation at API user creation level 
-- API documentation (Swagger)
+- enforce password validation at API user creation level
 - add Docker Compose for local development
 - test coverage 80% or above
 - add separate configuration for deployment on AWS (connection to RDS instead of a local MySQL, etc.)

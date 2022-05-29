@@ -1,6 +1,7 @@
 package com.great.MiquelMontoro.pilotes.security.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.great.MiquelMontoro.pilotes.security.config.UserConfig;
 import com.great.MiquelMontoro.pilotes.model.Order;
 import lombok.*;
 import org.hibernate.annotations.LazyToOne;
@@ -9,8 +10,6 @@ import org.hibernate.annotations.LazyToOneOption;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import java.util.Set;
-
-import static com.great.MiquelMontoro.pilotes.security.config.UserConfig.PHONE_NUMBER_PATTERN;
 
 @Entity
 @NoArgsConstructor
@@ -37,7 +36,7 @@ public class User {
     private String lastName;
 
     @Column(name="phone_number")
-    @Pattern(regexp = PHONE_NUMBER_PATTERN)
+    @Pattern(regexp = UserConfig.PHONE_NUMBER_PATTERN)
     private String phoneNumber;
 
     @Column(length = 50)

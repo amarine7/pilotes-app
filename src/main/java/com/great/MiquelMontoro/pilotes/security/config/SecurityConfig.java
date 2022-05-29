@@ -44,8 +44,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 BasicAuthenticationFilter.class);
 
         http.authorizeRequests()
-                .antMatchers("/search-pilotes").hasAuthority("CAN_SEARCH")
-                .anyRequest().authenticated();
+                .antMatchers("/api/search-pilotes").hasAuthority("CAN_SEARCH")
+                .antMatchers("/api/**").authenticated()
+                .anyRequest().permitAll();
     }
 
     @Override

@@ -19,10 +19,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    private static List<String> nonSecuredPaths = Arrays.asList("/api/create-your-pilotes", "/api/search-pilotes", "/api/update-pilotes");
 
     @Value("${jwt.signing.key}")
     private String signingKey;
@@ -50,10 +53,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    // This filter is always active, except for the /login and /test endpoints
+    // This filter is always active, except for the /api/** endpoints
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return request.getServletPath().equals("/login") ||
-                request.getServletPath().equals("/test");
+        return !nonSecuredPaths.stream().anyMatch(s -> s.equals(request.getServletPath()));
     }
 }
