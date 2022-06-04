@@ -36,8 +36,6 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
 
         Optional<User> user = userRepo.findUserByUsername(username);
 
-//        System.out.println("THE RETRIEVED PASSWORD IS : " + user.get().getPassword()); log here
-
         if(!user.isPresent()) {
             log.error("User not found in the database");
             throw new UsernameNotFoundException("User not found in the database");

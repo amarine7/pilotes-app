@@ -1,6 +1,8 @@
 package com.great.MiquelMontoro.pilotes.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import org.springframework.validation.annotation.Validated;
@@ -28,7 +30,6 @@ public class ErrorResponse   {
     private Integer status = null;
 
     @JsonProperty("fieldErrors")
-    @Valid
     private List<String> fieldErrors = null;
 
     public ErrorResponse timestamp(String timestamp) {

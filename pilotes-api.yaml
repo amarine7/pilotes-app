@@ -3,9 +3,9 @@ info:
   title: Pilotes of the great Miquel Montoro
   description: API-based application for managing orders of the famous Pilotes of the great Miquel Montoro (Majorcan recipe consisting of a meatball stew).
   version: 0.0.1
-tags:
-  - name: pilotes
-    description: Miquel Montoro Pilotes functions
+#tags:
+#  - name: pilotes
+#    description: Miquel Montoro Pilotes functions
 paths:
   /api/create-your-pilotes:
     post:

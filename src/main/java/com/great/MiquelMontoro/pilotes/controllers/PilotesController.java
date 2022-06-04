@@ -27,7 +27,6 @@ public class  PilotesController implements PilotesApi {
 
     private static final Logger log = LoggerFactory.getLogger(PilotesController.class);
 
-//    @Autowired
     public PilotesController(HttpServletRequest request) {
         this.request = request;
     }
@@ -120,13 +119,13 @@ public class  PilotesController implements PilotesApi {
         throw new MissingAcceptHeaderException("Content-Type", contentType);
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "Test";
-    }
-
-    @GetMapping("/returnRecords")
-    public List<com.great.MiquelMontoro.pilotes.model.Order> checkLoadedRecords() {
-        return pilotesService.returnRecords();
-    }
+//    @GetMapping("/test")
+//    public String test() {
+//        return "Test";
+//    }
+//
+//    @GetMapping("/returnRecords")
+//    public List<com.great.MiquelMontoro.pilotes.model.Order> checkLoadedRecords() {
+//        return pilotesService.returnRecords();
+//    }
 }
