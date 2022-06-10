@@ -14,8 +14,12 @@ Keep in mind that:
 - the order search operation is secured in that **only authenticated and authorized users are allowed to use the search**.
 - there is a /login endpoint for authentication, and **the issued JWT is valid for 5 minutes**.
 
+For now only two users are created and it is not possible to add more:
+- username "alemari", authority "CAN_SEARCH";
+- username "someone", authority "CAN_NOT_SEARCH";
+
 Technical aspects:
-- The  project uses Lombok and Mapstruct
+- The project uses Lombok and Mapstruct
 - The API follows REST standard
 - The  project use MySQL database, but it's easily configurable to use an in-memory database such as H2 or similar too.
 - Tests are included
