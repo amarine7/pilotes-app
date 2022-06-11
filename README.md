@@ -25,7 +25,8 @@ Technical aspects:
 - Tests are included
 
 Technical TODOs:
-- add global exception handling and check if the swagger error "Unable to find a model that matches..." persists.
+- complete global exception handling (optionally creating an ExceptionUtils class with all the boilerplate throwing code)
+- after, check if the swagger error "Unable to find a model that matches..." persists.
 - add at least one operation public and not secured.
 - for admnistrative users, grant infinite JWT validity.
 - solve the enum problem for the number of allowed pilotes.

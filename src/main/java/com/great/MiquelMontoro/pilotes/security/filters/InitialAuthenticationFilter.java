@@ -1,5 +1,6 @@
 package com.great.MiquelMontoro.pilotes.security.filters;
 
+import com.great.MiquelMontoro.pilotes.exception.MissingAcceptHeaderException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.http.HttpHeaders;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
@@ -35,9 +37,9 @@ public class InitialAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
         String username = request.getHeader("username");
         String password = request.getHeader("password");
-
         Authentication authentication = manager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 
         SecretKey key = Keys.hmacShaKeyFor(signingKey.getBytes(StandardCharsets.UTF_8));
