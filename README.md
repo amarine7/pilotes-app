@@ -25,11 +25,17 @@ Technical aspects:
 - Tests are included
 
 Technical TODOs:
-- complete global exception handling (optionally creating an ExceptionUtils class with all the boilerplate throwing code)
+- complete global exception handling:
+  - remove throwing from body of controller and delete MissingAcceptHeaderException,
+  - refine the code for the messages of the errors in GlobalExceptionHandler,
+  - rebaptize the json fields of the Order dto,
+  - complete exception handling for other 2 methods,
 - after, check if the swagger error "Unable to find a model that matches..." persists.
 - add at least one operation public and not secured.
 - for admnistrative users, grant infinite JWT validity.
+- make impossible to order with a token for user A but id for user B in post request.
 - solve the enum problem for the number of allowed pilotes.
+- add descriptions for the fields of the Order dto.
 - add Sonarlint.
 - add treating exceptions and logging the event in filters.
 - separate user creation (through a User dto and via POST req) from user registration (User entity).

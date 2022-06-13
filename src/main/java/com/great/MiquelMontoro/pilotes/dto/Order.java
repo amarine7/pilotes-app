@@ -45,6 +45,7 @@ public class Order   {
      * @return id
      **/
     @Schema(description = "")
+    @NotNull
 
     public Long getId() {
         return id;

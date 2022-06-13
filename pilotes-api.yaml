@@ -183,6 +183,7 @@ components:
       required:
         - deliveryAddress
         - numberOfPilotes
+        - idUser
       properties:
         id:
           type: integer
